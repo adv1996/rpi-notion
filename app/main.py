@@ -1,5 +1,3 @@
-from gpiozero import Button
-from signal import pause
 import os
 from os.path import join, dirname
 from dotenv import load_dotenv
@@ -90,13 +88,4 @@ def driver():
   
 
 if __name__ == "__main__":
-  print('RPI_NOTION Ready')
-  button = Button(2)
-
-  button.when_pressed = driver
-
-  pause()
-
-# HOW TO RUN
-# docker build -t rpi_notion .
-# docker run --privileged -t rpi_notion
+  driver()
