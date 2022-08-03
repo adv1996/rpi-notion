@@ -15,7 +15,6 @@ import pytz
 timeZ_Ny = pytz.timezone('America/New_York')
 
 def driver():
-  print('CREATING NOTION RECORD')
   start_time = datetime.datetime.now(timeZ_Ny)
   current_time = start_time.strftime("%I:%M %p")
   time_change = datetime.timedelta(hours=8)
@@ -23,8 +22,6 @@ def driver():
   todays_date = start_time.strftime('%m/%d/%Y')
 
   pageId = createDatabaseRecord(NOTION_DATABASE_ID, 'Daily Entry', todays_date)
-
-  # TODO: future read from JSON templates?
 
   blocks = [
     {
@@ -84,7 +81,6 @@ def driver():
   children = blockBuilder(blocks)
   if pageId:
     addPageBlocks(pageId, children)
-    print('COMPLETED TASK')
   
 
 if __name__ == "__main__":

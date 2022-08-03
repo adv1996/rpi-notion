@@ -3,9 +3,9 @@ Raspberry Pi Control Hub
 
 HOW TO RUN
 
-`build` docker build -t rpi_notion .
+`build` docker build -t rpi-notion .
 
-`run` docker run --privileged -t rpi_notion
+`run` docker run --privileged -t rpi-notion
 
 Need Environment Variables
 NOTION_CLIENT_KEY=${get from notion developer}
